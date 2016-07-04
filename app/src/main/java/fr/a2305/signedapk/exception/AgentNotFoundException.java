@@ -1,7 +1,7 @@
 package fr.a2305.signedapk.exception;
 
 /**
- * ${PROJECTED_NAME} -
+ * signedApk -
  * Created by hagui on 2016.
  */
 public class AgentNotFoundException extends RuntimeException{

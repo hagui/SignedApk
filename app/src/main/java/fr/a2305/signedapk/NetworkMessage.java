@@ -6,4 +6,6 @@ package fr.a2305.signedapk;
  */
 public class NetworkMessage {
 
+
+
 }
