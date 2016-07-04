@@ -1,10 +1,9 @@
 package fr.a2305.signedapk;
 
 /**
- * ${PROJECTED_NAME} -
+ * signedApk -
  * Created by hagui on 2016.
  */
 public class NetworkMessage {
-
 
 }

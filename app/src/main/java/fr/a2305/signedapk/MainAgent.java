@@ -4,6 +4,13 @@ import android.content.Context;
 import android.os.Handler;
 
 import fr.a2305.signedapk.exception.AgentNotFoundException;
+import fr.a2305.signedapk.interfaces.DeviceManager;
+import fr.a2305.signedapk.interfaces.FileShareManager;
+import fr.a2305.signedapk.interfaces.HttpRequestManager;
+import fr.a2305.signedapk.interfaces.NetworkManager;
+import fr.a2305.signedapk.interfaces.ScreenManager;
+import fr.a2305.signedapk.interfaces.SystemManager;
+import fr.a2305.signedapk.interfaces.WifiManager;
 
 /**
  * MilliwebSignedApk -
@@ -21,6 +28,7 @@ public abstract class MainAgent {
     protected ScreenShareAgent screenShareManager;
     protected ScreenManager screenManager;
     protected FileShareManager fileShareManager;
+    protected HttpRequestManager httpRequestManager;
 
     public MainAgent(Context context) {
         this.context = context;
@@ -31,11 +39,11 @@ public abstract class MainAgent {
 
     }
 
+    /**
+     * Called when agent is added to ApplicationManager successfully and is ready to start.
+     * initializing code can be added here
+     */
     protected abstract void onInitialized();
-
-    protected abstract void onStarted();
-
-    protected abstract void onStopped();
 
     protected  void loadAndroidManagers(){
 
@@ -51,6 +59,8 @@ public abstract class MainAgent {
     }
 
     protected void notifyUnsupportedAgent(int var1  , String var2){
+
+
     }
 
     //TODO implement after implementation of the fetchClass

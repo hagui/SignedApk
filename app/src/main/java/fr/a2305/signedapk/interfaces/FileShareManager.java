@@ -1,4 +1,4 @@
-package fr.a2305.signedapk;
+package fr.a2305.signedapk.interfaces;
 
 /**
  * ${PROJECTED_NAME} -

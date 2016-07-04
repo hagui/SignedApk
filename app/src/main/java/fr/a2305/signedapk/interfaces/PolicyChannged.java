@@ -1,4 +1,4 @@
-package fr.a2305.signedapk;
+package fr.a2305.signedapk.interfaces;
 
 import android.os.Bundle;
 
@@ -6,7 +6,7 @@ import android.os.Bundle;
  * ${SignedApk} -
  * Created by hagui on 2016.
  */
-public interface PolicyChannged extends Controller{
+public interface PolicyChannged extends Controller {
 
     boolean isAirViewAllowed();
 

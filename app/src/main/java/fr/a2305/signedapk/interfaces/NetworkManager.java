@@ -1,14 +1,16 @@
-package fr.a2305.signedapk;
+package fr.a2305.signedapk.interfaces;
 
 import android.net.wifi.WifiInfo;
 
 import java.util.List;
 
+import fr.a2305.signedapk.NetworkMessage;
+
 /**
  *  -
  * Created by hagui on 2016.
  */
-public interface  NetworkManager extends Controller{
+public interface  NetworkManager extends Controller {
     void setVip(String var1) throws Exception;
 
     boolean isVLanEnabled();
