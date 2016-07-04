@@ -19,7 +19,7 @@ public class NetworkMessage {
     }
 
     private static synchronized NetworkMessage b(){
-        return i == null?(i = new NetworkMessage()):(!i.g:new NetworkMessage());
+        return i == null?(i = new NetworkMessage()):(!i.g?i:new NetworkMessage());
     }
 
 
