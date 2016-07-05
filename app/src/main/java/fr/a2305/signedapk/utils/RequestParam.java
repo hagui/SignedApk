@@ -1,4 +1,4 @@
-package fr.a2305.signedapk.Manager;
+package fr.a2305.signedapk.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

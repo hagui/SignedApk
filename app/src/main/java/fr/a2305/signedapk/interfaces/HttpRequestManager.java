@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Map;
 
-import fr.a2305.signedapk.Manager.RequestParam;
+import fr.a2305.signedapk.utils.RequestParam;
 
 /**
  * ${PROJECTED_NAME} -

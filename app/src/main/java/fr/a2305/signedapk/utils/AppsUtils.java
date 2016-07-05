@@ -2,9 +2,14 @@ package fr.a2305.signedapk.utils;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
+import android.content.res.Resources;
 import android.os.Build;
 import android.provider.Settings;
+import android.util.DisplayMetrics;
 import android.util.Log;
+
+import java.io.File;
+import java.io.FileInputStream;
 
 /**
  * SignedApk -
@@ -92,5 +97,44 @@ public class AppsUtils {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M;
     }
 
+    public final static boolean isValidEmail(CharSequence target) {
+        if (target == null) {
+            return false;
+        } else {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(target)
+                    .matches();
+        }
+    }
 
+    public static byte[] getByteArray(File filePath, String name)
+    {
+        FileInputStream fileInputStream=null;
+
+        File file = new File(filePath,name);
+
+        byte[] bFile = new byte[(int) file.length()];
+
+        try {
+            //convert file into array of bytes
+            fileInputStream = new FileInputStream(file);
+            fileInputStream.read(bFile);
+            fileInputStream.close();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return bFile;
+    }
+
+
+    public static float convertDpToPixel(float dp, Context context) {
+        Resources resources = context.getResources();
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+        float px = dp * (metrics.densityDpi / 160f);
+        return px;
+    }
 }
+
+
+
+

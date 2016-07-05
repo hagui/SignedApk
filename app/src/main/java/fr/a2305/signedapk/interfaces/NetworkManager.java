@@ -4,7 +4,7 @@ import android.net.wifi.WifiInfo;
 
 import java.util.List;
 
-import fr.a2305.signedapk.NetworkMessage;
+import fr.a2305.signedapk.utils.NetworkMessage;
 
 /**
  *  -

@@ -1,6 +1,6 @@
 package fr.a2305.signedapk.interfaces;
 
-import fr.a2305.signedapk.AgentFetcher;
+import fr.a2305.signedapk.Agent.AgentFetcher;
 
 /**
  * Signed apk -
