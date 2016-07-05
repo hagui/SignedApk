@@ -18,13 +18,13 @@ public interface UploadListener {
         }
     }
 
-        public static class UploadProgressStatus {
-            long a;
-            UploadListener.Status b;
+    public static class UploadProgressStatus {
+        long a;
+        UploadListener.Status b;
 
-            public UploadProgressStatus() {
-            }
+        public UploadProgressStatus() {
         }
+    }
 
 
 }
