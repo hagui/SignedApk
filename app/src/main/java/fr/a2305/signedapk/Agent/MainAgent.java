@@ -9,6 +9,7 @@ import fr.a2305.signedapk.interfaces.FileShareManager;
 import fr.a2305.signedapk.interfaces.HttpRequestManager;
 import fr.a2305.signedapk.interfaces.NetworkManager;
 import fr.a2305.signedapk.interfaces.ScreenManager;
+import fr.a2305.signedapk.interfaces.ScreenShareAgent;
 import fr.a2305.signedapk.interfaces.SystemManager;
 import fr.a2305.signedapk.interfaces.WifiManager;
 
