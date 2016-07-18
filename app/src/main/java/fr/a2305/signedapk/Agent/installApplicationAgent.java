@@ -1,5 +1,8 @@
 package fr.a2305.signedapk.Agent;
 
+import android.content.Context;
+import android.content.pm.PackageManager;
+
 import java.util.List;
 
 import fr.a2305.signedapk.interfaces.ApplicationInstallPolicy;
@@ -9,6 +12,12 @@ import fr.a2305.signedapk.interfaces.ApplicationInstallPolicy;
  * Created by hagui on 2016.
  */
 public class installApplicationAgent implements ApplicationInstallPolicy {
+    private Context mContext;
+
+    public installApplicationAgent(Context mContext) {
+        this.mContext = mContext;
+    }
+
     @Override
     public List<String> uninstallApplications(List<String> packageList) {
         return null;
@@ -21,7 +30,13 @@ public class installApplicationAgent implements ApplicationInstallPolicy {
 
     @Override
     public boolean isApplicationInstalled(String packageName) {
-        return false;
+        PackageManager pm = mContext.getPackageManager();
+        try {
+            pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
+            return true;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
     }
 
     @Override
