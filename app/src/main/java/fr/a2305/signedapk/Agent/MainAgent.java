@@ -31,7 +31,7 @@ public abstract class MainAgent {
     protected FileShareManager fileShareManager;
     protected HttpRequestManager httpRequestManager;
 
-    public MainAgent(Context context) {
+    public MainAgent() {
         this.context = context;
     }
 

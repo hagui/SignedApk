@@ -11,11 +11,17 @@ import fr.a2305.signedapk.interfaces.ApplicationInstallPolicy;
  * SignedApk -
  * Created by hagui on 2016.
  */
-public class installApplicationAgent implements ApplicationInstallPolicy {
+public class installApplicationAgent extends MainAgent implements ApplicationInstallPolicy {
     private Context mContext;
 
     public installApplicationAgent(Context mContext) {
+        super();
         this.mContext = mContext;
+    }
+
+    @Override
+    protected void onInitialized() {
+
     }
 
     @Override
