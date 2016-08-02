@@ -1,6 +1,7 @@
 package fr.a2305.signedapk.utils;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
@@ -16,7 +17,7 @@ public class ShellExecutor {
     public String Executer(String command) {
 
         StringBuffer output = new StringBuffer();
-
+        /*
         Process p;
         try {
             p = Runtime.getRuntime().exec(command);
@@ -29,6 +30,18 @@ public class ShellExecutor {
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
+        }*/
+        try {
+            Process p = Runtime.getRuntime().exec(command);
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(p.getInputStream()));
+            String line = null;
+            while ((line = in.readLine()) != null) {
+                System.out.println(line);
+                output.append(line + "n");
+            }
+        } catch (IOException e) {
             e.printStackTrace();
         }
         String response = output.toString();

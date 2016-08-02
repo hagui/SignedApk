@@ -1,0 +1,68 @@
+<!-- this file is related to Installuninstallapplication -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:background="@android:color/holo_purple"
+    android:orientation="vertical"
+    android:weightSum="1"
+    >
+
+    <TextView android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvInstall"
+        android:gravity="center"
+        android:text="\nOnce you press the &apos;Install&apos; button below, \n application named &apos;DummyApp&apos; will be installed.\n (package name : test.dummyapp)\n"
+        android:textStyle="bold|italic" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Install"
+        android:id="@+id/btInstall"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onClickEvent"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="397dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/textView"
+        android:layout_weight="0.18" />
+
+    <TextView android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvUninstall"
+        android:gravity="center"
+        android:text="\nOnce you press the &apos;Uninstall&apos; button below, \n&apos;DummyApp&apos; will be removed."
+        android:textStyle="bold|italic"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uninstall"
+            android:id="@+id/btUninstall"
+            android:layout_gravity="center_horizontal"
+            android:onClick="onClickEvent"/>
+
+    </LinearLayout>
+
+</LinearLayout>

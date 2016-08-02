@@ -2,19 +2,23 @@ package fr.a2305.signedapk.Agent;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.util.Log;
 
 import java.util.List;
 
 import fr.a2305.signedapk.interfaces.ApplicationInstallPolicy;
+import fr.a2305.signedapk.utils.ShellExecutor;
 
 /**
  * SignedApk -
  * Created by hagui on 2016.
  */
-public class installApplicationAgent extends MainAgent implements ApplicationInstallPolicy {
+public class InstallApplicationAgent extends MainAgent implements ApplicationInstallPolicy {
     private Context mContext;
+    private final static String INSTALLCOMMAND = "  pm    install          ";
+    private final static String UNINSTALLCOMMAND = " pm uninstall -r ";
 
-    public installApplicationAgent(Context mContext) {
+    public InstallApplicationAgent(Context mContext) {
         super();
         this.mContext = mContext;
     }
@@ -52,7 +56,23 @@ public class installApplicationAgent extends MainAgent implements ApplicationIns
 
     @Override
     public boolean installApplication(String apkFilePath, boolean installOnSDCard) {
-        return false;
+        boolean result = false;
+        String response = null;
+        ShellExecutor shellExecutor = new ShellExecutor();
+        try {
+            response = shellExecutor.Executer((this.INSTALLCOMMAND).concat(" " +apkFilePath));
+        } catch (Exception e){
+            // TODO iplement new Exception
+            Log.e(" " , "fail" , e);
+            result = false;
+        } finally {
+            if(response.contains("Succes")){
+                result = true;
+            } else {
+                result = false;
+            }
+        }
+        return result;
     }
 
     @Override
@@ -62,7 +82,24 @@ public class installApplicationAgent extends MainAgent implements ApplicationIns
 
     @Override
     public boolean uninstallApplication(String packageName, boolean keepDataAndCache) {
-        return false;
+        boolean result = false;
+        String response = null;
+        ShellExecutor shellExecutor = new ShellExecutor();
+        try {
+            response = shellExecutor.Executer((this.INSTALLCOMMAND).concat(packageName));
+
+        } catch (Exception e){
+            // TODO iplement new Exception
+            Log.e(" " , "fail" , e);
+            result = false;
+        } finally {
+            if(response.contains("succes")){
+                result = true;
+            } else {
+                result = false;
+            }
+        }
+        return result;
     }
 
     @Override
